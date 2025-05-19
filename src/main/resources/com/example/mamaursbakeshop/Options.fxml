@@ -33,8 +33,8 @@
             <Button onAction="#handleSales" prefWidth="250.0" text="SALES GRAPHIC OVERVIEW" />
             <Button onAction="#handleSuppliers" prefWidth="250.0" text="SUPPLIERS INFORMATION" />
             <Button onAction="#handleEmployees" prefWidth="250.0" text="EMPLOYEE DATA" />
-            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="250.0" text="OPERATIONAL COST" />
-            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="250.0" text="ITEM STOCK" />
+            <Button onAction="#handleOperationalCost" mnemonicParsing="false" prefHeight="25.0" prefWidth="250.0" text="OPERATIONAL COST" />
+            <Button onAction="#handleBreadStock" mnemonicParsing="false" prefHeight="25.0" prefWidth="250.0" text="ITEM STOCK" />
             <Button onAction="#handleLogout" prefHeight="25.0" prefWidth="135.0" text="LOGOUT" />
          </VBox>
 

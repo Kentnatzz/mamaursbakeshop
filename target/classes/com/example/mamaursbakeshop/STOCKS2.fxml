@@ -4,43 +4,53 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="533.0" prefWidth="634.0" style="-fx-background-color: beige;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.mamaursbakeshop.StocksController">
+<AnchorPane prefHeight="550.0" prefWidth="634.0" style="-fx-background-color: beige;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.mamaursbakeshop.StocksController">
+
     <children>
         <VBox alignment="TOP_CENTER" layoutX="20.0" layoutY="20.0" prefWidth="590.0" spacing="20.0">
 
-            <!-- Title -->
             <HBox alignment="CENTER">
                 <Label text="SALES AND INVENTORY">
-                    <font>
-                        <Font size="26.0" />
-                    </font>
+                    <font><Font size="26.0" /></font>
                 </Label>
             </HBox>
 
-
-            <TableView fx:id="breadSalesTable" prefHeight="350.0" prefWidth="580.0">
+            <TableView fx:id="breadSalesTable" prefHeight="300.0" prefWidth="580.0">
                 <columns>
-                    <TableColumn fx:id="breadTypeColumn" prefWidth="180" text="Bread Type" />
+                    <TableColumn fx:id="breadTypeColumn" prefWidth="150" text="Bread Type" />
+                    <TableColumn fx:id="priceColumn" prefWidth="100" text="Price" />
                     <TableColumn fx:id="quantitySoldColumn" prefWidth="100" text="Quantity Sold" />
-                    <TableColumn fx:id="salesDateColumn" prefWidth="160" text="Date Sold" />
+                    <TableColumn fx:id="totalColumn" prefWidth="110.0" text="Total" />
+                    <TableColumn fx:id="salesDateColumn" prefWidth="130" text="Date Sold" />
                 </columns>
             </TableView>
 
-
             <HBox alignment="CENTER" spacing="15.0">
-                <Label text="Bread Type: " />
+                <Label text="Bread Type:" />
                 <TextField fx:id="breadTypeInput" promptText="Enter bread type" />
-                <Label text="Quantity Sold: " />
-                <TextField fx:id="quantitySoldInput" promptText="Enter quantity sold" />
-                <Label text="Date Sold: " />
-                <TextField fx:id="salesDateInput" promptText="Enter date sold" />
+                <Label text="Price:" />
+                <TextField fx:id="priceInput" promptText="Enter price" />
             </HBox>
-
 
             <HBox alignment="CENTER" spacing="15.0">
-                <Button onAction="#handleAddSale" style="-fx-background-color: #A0522D; -fx-text-fill: White;" text="Add Sale" />
-                <Button onAction="#handleDeleteSale" style="-fx-background-color: #A0522D; -fx-text-fill: White;" text="Delete Sale" />
+                <Label text="Quantity Sold:" />
+                <TextField fx:id="quantitySoldInput" promptText="Enter quantity sold" />
+                <Label text="Date Sold:" />
+                <TextField fx:id="salesDateInput" promptText="Enter date sold (yyyy-MM-dd)" />
             </HBox>
+
+            <HBox alignment="CENTER" spacing="15.0">
+                <Button onAction="#handleAddSale" style="-fx-background-color: #A0522D; -fx-text-fill: white;" text="Add Sale" />
+            </HBox>
+
+
+            <HBox alignment="CENTER_RIGHT" spacing="15.0">
+                <Label text="Total Quantity Sold:" />
+                <Label fx:id="totalQuantityLabel" style="-fx-font-weight: bold;" text="0" />
+                <Label text="Bi-Monthly Period:" />
+                <Label fx:id="biMonthlyLabel" style="-fx-font-style: italic;" text="-" />
+            </HBox>
+
         </VBox>
     </children>
 </AnchorPane>

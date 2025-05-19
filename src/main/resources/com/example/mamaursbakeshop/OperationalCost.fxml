@@ -3,14 +3,23 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: beige;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.mamaursbakeshop.OperationalCostController">
+<AnchorPane prefHeight="600.0" prefWidth="700.0" style="-fx-background-color: beige;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.mamaursbakeshop.OperationalCostController">
 
-    <VBox layoutX="10" layoutY="10" prefHeight="380" prefWidth="580" spacing="10">
+    <!-- Main content area -->
+    <VBox spacing="10" AnchorPane.topAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.bottomAnchor="50.0">
+
         <GridPane hgap="10" vgap="10">
             <columnConstraints>
                 <ColumnConstraints halignment="RIGHT" />
                 <ColumnConstraints hgrow="ALWAYS" />
             </columnConstraints>
+
+            <rowConstraints>
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+            </rowConstraints>
 
             <Label text="Capital:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
             <TextField fx:id="capitalField" promptText="Enter capital" GridPane.columnIndex="1" GridPane.rowIndex="0" />
@@ -23,15 +32,9 @@
 
             <Label text="Utility Cost:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
             <TextField fx:id="utilityCostField" promptText="Enter utility cost" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-         <rowConstraints>
-            <RowConstraints />
-            <RowConstraints />
-            <RowConstraints />
-            <RowConstraints />
-         </rowConstraints>
         </GridPane>
 
-        <HBox spacing="10" style="-fx-background-color: beoge;">
+        <HBox spacing="10">
             <Button onAction="#handleAdd" text="Add" />
             <Button onAction="#handleDelete" text="Delete" />
             <Button onAction="#handleClear" text="Clear All" />
@@ -40,11 +43,15 @@
         <TableView fx:id="tableView" prefHeight="200">
             <columns>
                 <TableColumn fx:id="capitalColumn" prefWidth="140" text="Capital" />
-                <TableColumn fx:id="profitColumn" prefWidth="140" text="Profit" />
-                <TableColumn fx:id="laborCostColumn" prefWidth="140" text="Labor Cost" />
                 <TableColumn fx:id="utilityCostColumn" prefWidth="140" text="Utility Cost" />
+                <TableColumn fx:id="laborCostColumn" prefWidth="140" text="Labor Cost" />
+                <TableColumn fx:id="profitColumn" prefWidth="140" text="Profit" />
+                <TableColumn fx:id="totalColumn" prefWidth="120" text="Total" />
             </columns>
         </TableView>
+
     </VBox>
+
+    <Button fx:id="backButton" onAction="#handleBack" text="Back" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" />
 
 </AnchorPane>

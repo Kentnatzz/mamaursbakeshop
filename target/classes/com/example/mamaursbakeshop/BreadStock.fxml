@@ -3,9 +3,16 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: beige;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.mamaursbakeshop.BreadStockController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: beige;"
+            xmlns="http://javafx.com/javafx/17.0.12"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.mamaursbakeshop.BreadStockController">
 
-    <VBox prefHeight="380.0" prefWidth="580.0" spacing="10.0" style="-fx-background-color: beige;" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+    <VBox prefHeight="380.0" prefWidth="580.0" spacing="10.0"
+          AnchorPane.topAnchor="10.0" AnchorPane.leftAnchor="10.0"
+          AnchorPane.rightAnchor="10.0" AnchorPane.bottomAnchor="50.0"
+          style="-fx-background-color: beige;">
+
         <GridPane hgap="10" vgap="10">
             <columnConstraints>
                 <ColumnConstraints halignment="RIGHT" />
@@ -42,4 +49,9 @@
             </columns>
         </TableView>
     </VBox>
+
+
+    <Button fx:id="backButton" onAction="#handleBack" text="Back"
+            AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" />
+
 </AnchorPane>

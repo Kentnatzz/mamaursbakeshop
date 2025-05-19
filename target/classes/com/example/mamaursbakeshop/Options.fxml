@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="740.0" style="-fx-background-color: beige;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.mamaursbakeshop.OptionsController">
+   <children>
+      <ImageView fitHeight="219.0" fitWidth="307.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@123123-removebg-preview.png" />
+         </image>
+      </ImageView>
+      <VBox alignment="CENTER" layoutX="135.0" layoutY="30.0" prefHeight="527.0" prefWidth="523.0" spacing="20.0">
+         <Label prefHeight="33.0" prefWidth="346.0" text="MAMA URS BAKESHOP" textAlignment="CENTER">
+            <font>
+               <Font name="Niagara Engraved" size="68.0" />
+            </font>
+         </Label>
+         <!-- Title Label -->
+         <HBox alignment="CENTER">
+            <Label text="OPTIONS">
+               <font>
+                  <Font size="34.0" />
+               </font>
+            </Label>
+         </HBox>
+
+         <!-- Buttons Group -->
+         <VBox alignment="CENTER" spacing="10.0">
+            <Button onAction="#handleStocks" prefWidth="250.0" text="BREADSALES" />
+            <Button onAction="#handleSales" prefWidth="250.0" text="SALES" />
+            <Button onAction="#handleSuppliers" prefWidth="250.0" text="SUPPLIERS" />
+            <Button onAction="#handleEmployees" prefWidth="250.0" text="EMPLOYEES" />
+            <Button onAction="#handleLogout" prefHeight="25.0" prefWidth="135.0" text="LOGOUT" />
+         </VBox>
+
+         <!-- Back Button -->
+         <HBox alignment="CENTER" />
+      </VBox>
+   </children>
+</AnchorPane>

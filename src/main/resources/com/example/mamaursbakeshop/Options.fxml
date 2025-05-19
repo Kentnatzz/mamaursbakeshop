@@ -18,7 +18,7 @@
                <Font name="Niagara Engraved" size="68.0" />
             </font>
          </Label>
-         <!-- Title Label -->
+
          <HBox alignment="CENTER">
             <Label text="OPTIONS">
                <font>
@@ -27,7 +27,7 @@
             </Label>
          </HBox>
 
-         <!-- Buttons Group -->
+
          <VBox alignment="CENTER" spacing="10.0">
             <Button onAction="#handleStocks" prefWidth="250.0" text="BREADSALES" />
             <Button onAction="#handleSales" prefWidth="250.0" text="SALES" />
@@ -36,7 +36,7 @@
             <Button onAction="#handleLogout" prefHeight="25.0" prefWidth="135.0" text="LOGOUT" />
          </VBox>
 
-         <!-- Back Button -->
+
          <HBox alignment="CENTER" />
       </VBox>
    </children>

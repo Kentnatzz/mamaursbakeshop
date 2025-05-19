@@ -61,7 +61,7 @@ public class StocksController {
         String quantityText = quantitySoldInput.getText();
         String salesDate = salesDateInput.getText();
 
-        // Validate inputs
+
         if (breadType.isEmpty() || quantityText.isEmpty() || salesDate.isEmpty()) {
             showAlert("Invalid Input", "Please provide all fields.");
             return;

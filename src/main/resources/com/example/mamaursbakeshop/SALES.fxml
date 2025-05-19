@@ -5,12 +5,9 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="478.0" prefWidth="605.0" style="-fx-background-color: beige;"
-            xmlns="http://javafx.com/javafx/17.0.12"
-            xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.example.mamaursbakeshop.SalesController">
+<AnchorPane prefHeight="478.0" prefWidth="605.0" style="-fx-background-color: beige;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.mamaursbakeshop.SalesController">
     <children>
-        <VBox layoutX="30.0" layoutY="20.0" spacing="20.0" prefWidth="545.0">
+        <VBox layoutX="30.0" layoutY="20.0" prefWidth="545.0" spacing="20.0">
 
 
             <HBox alignment="CENTER">
@@ -27,13 +24,13 @@
                 <TextField fx:id="dateInput" promptText="Enter Date (e.g., May 6)" />
                 <Label text="Sales ($):" />
                 <TextField fx:id="salesInput" promptText="Enter Sales Amount" />
-                <Button text="Add Sales" onAction="#handleAddSales"/>
+                <Button onAction="#handleAddSales" text="Add Sales" />
             </HBox>
 
 
-            <AreaChart fx:id="salesChart" prefHeight="250.0" prefWidth="500.0" title="Daily Sales Chart">
+            <AreaChart fx:id="salesChart" prefHeight="250.0" prefWidth="500.0" title="Sales Graph">
                 <xAxis>
-                    <CategoryAxis fx:id="xAxis" label="Date" side="BOTTOM" />
+                    <CategoryAxis label="Date" side="BOTTOM" fx:id="xAxis" />
                 </xAxis>
                 <yAxis>
                     <NumberAxis fx:id="yAxis" label="Amount ($)" side="LEFT" />
@@ -42,9 +39,9 @@
 
 
             <HBox alignment="CENTER" spacing="20.0">
-                <Button text="Refresh" onAction="#handleRefresh"/>
-                <Button text="Export" onAction="#handleExport"/>
-                <Button text="Back" onAction="#handleBack"/>
+                <Button onAction="#handleRefresh" text="Refresh" />
+                <Button onAction="#handleExport" text="Export" />
+                <Button onAction="#handleBack" text="Back" />
             </HBox>
         </VBox>
     </children>

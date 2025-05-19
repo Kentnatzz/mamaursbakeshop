@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: beige;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.mamaursbakeshop.OperationalCostController">
+
+    <VBox layoutX="10" layoutY="10" prefHeight="380" prefWidth="580" spacing="10">
+        <GridPane hgap="10" vgap="10">
+            <columnConstraints>
+                <ColumnConstraints halignment="RIGHT" />
+                <ColumnConstraints hgrow="ALWAYS" />
+            </columnConstraints>
+
+            <Label text="Capital:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <TextField fx:id="capitalField" promptText="Enter capital" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+            <Label text="Profit:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <TextField fx:id="profitField" promptText="Enter profit" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+            <Label text="Labor Cost:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+            <TextField fx:id="laborCostField" promptText="Enter labor cost" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+            <Label text="Utility Cost:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+            <TextField fx:id="utilityCostField" promptText="Enter utility cost" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+         <rowConstraints>
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+         </rowConstraints>
+        </GridPane>
+
+        <HBox spacing="10" style="-fx-background-color: beoge;">
+            <Button onAction="#handleAdd" text="Add" />
+            <Button onAction="#handleDelete" text="Delete" />
+            <Button onAction="#handleClear" text="Clear All" />
+        </HBox>
+
+        <TableView fx:id="tableView" prefHeight="200">
+            <columns>
+                <TableColumn fx:id="capitalColumn" prefWidth="140" text="Capital" />
+                <TableColumn fx:id="profitColumn" prefWidth="140" text="Profit" />
+                <TableColumn fx:id="laborCostColumn" prefWidth="140" text="Labor Cost" />
+                <TableColumn fx:id="utilityCostColumn" prefWidth="140" text="Utility Cost" />
+            </columns>
+        </TableView>
+    </VBox>
+
+</AnchorPane>

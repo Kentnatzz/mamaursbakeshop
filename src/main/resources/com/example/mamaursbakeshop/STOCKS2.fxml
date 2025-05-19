@@ -10,7 +10,7 @@
 
             <!-- Title -->
             <HBox alignment="CENTER">
-                <Label text="BREAD SALES INVENTORY">
+                <Label text="SALES AND INVENTORY">
                     <font>
                         <Font size="26.0" />
                     </font>

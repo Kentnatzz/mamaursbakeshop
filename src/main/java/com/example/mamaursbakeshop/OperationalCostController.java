@@ -2,8 +2,13 @@ package com.example.mamaursbakeshop;
 
 import javafx.beans.property.*;
 import javafx.collections.*;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.stage.Stage;
 
 public class OperationalCostController {
 
@@ -21,7 +26,6 @@ public class OperationalCostController {
 
     private ObservableList<OperationalCost> data;
 
-    // Data class inside controller
     public static class OperationalCost {
         private final DoubleProperty capital;
         private final DoubleProperty profit;
@@ -77,7 +81,6 @@ public class OperationalCostController {
             OperationalCost newCost = new OperationalCost(capital, profit, laborCost, utilityCost);
             data.add(newCost);
 
-            // Clear inputs after add
             capitalField.clear();
             profitField.clear();
             laborCostField.clear();
@@ -106,8 +109,21 @@ public class OperationalCostController {
     }
 
     @FXML
-    private void handleBack() {
-        // Implement navigation back logic here
-        System.out.println("Back button clicked");
+    private void handleBack(ActionEvent event) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Options.fxml"));
+            Parent root = fxmlLoader.load();
+            Stage stage = new Stage();
+            stage.setTitle("Options");
+            stage.setScene(new Scene(root));
+            stage.show();
+
+            // Close the current window
+            Stage currentStage = (Stage) ((Button) event.getSource()).getScene().getWindow();
+            currentStage.close();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

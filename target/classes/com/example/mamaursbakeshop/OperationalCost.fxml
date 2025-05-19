@@ -5,8 +5,7 @@
 
 <AnchorPane prefHeight="600.0" prefWidth="700.0" style="-fx-background-color: beige;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.mamaursbakeshop.OperationalCostController">
 
-    <!-- Main content area -->
-    <VBox spacing="10" AnchorPane.topAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.bottomAnchor="50.0">
+    <VBox spacing="10" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
 
         <GridPane hgap="10" vgap="10">
             <columnConstraints>

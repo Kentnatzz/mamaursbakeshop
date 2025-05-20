@@ -3,15 +3,9 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: beige;"
-            xmlns="http://javafx.com/javafx/17.0.12"
-            xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.example.mamaursbakeshop.BreadStockController">
+<AnchorPane prefHeight="550.0" prefWidth="660.0" style="-fx-background-color: beige;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.mamaursbakeshop.BreadStockController">
 
-    <VBox prefHeight="380.0" prefWidth="580.0" spacing="10.0"
-          AnchorPane.topAnchor="10.0" AnchorPane.leftAnchor="10.0"
-          AnchorPane.rightAnchor="10.0" AnchorPane.bottomAnchor="50.0"
-          style="-fx-background-color: beige;">
+    <VBox prefHeight="380.0" prefWidth="580.0" spacing="10.0" style="-fx-background-color: beige;" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
 
         <GridPane hgap="10" vgap="10">
             <columnConstraints>
@@ -36,12 +30,12 @@
         </GridPane>
 
         <HBox spacing="10.0">
-            <Button fx:id="addButton" onAction="#handleAdd" text="Add" />
-            <Button fx:id="deleteButton" onAction="#handleDelete" text="Delete" />
-            <Button fx:id="clearButton" onAction="#handleClear" text="Delete All" />
+            <Button fx:id="addButton" onAction="#handleAdd" style="-fx-background-color: #A0522D; -fx-text-fill: White;" text="Add" />
+            <Button fx:id="deleteButton" onAction="#handleDelete" style="-fx-background-color: #A0522D; -fx-text-fill: White;" text="Delete" />
+            <Button fx:id="clearButton" onAction="#handleClear" style="-fx-background-color: #A0522D; -fx-text-fill: White;" text="Delete All" />
         </HBox>
 
-        <TableView fx:id="tableView" prefHeight="200.0">
+        <TableView fx:id="tableView" prefHeight="355.0" prefWidth="640.0">
             <columns>
                 <TableColumn fx:id="breadNameColumn" prefWidth="200" text="Bread Name" />
                 <TableColumn fx:id="quantityColumn" prefWidth="100" text="Quantity" />
@@ -51,7 +45,6 @@
     </VBox>
 
 
-    <Button fx:id="backButton" onAction="#handleBack" text="Back"
-            AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" />
+    <Button fx:id="backButton" onAction="#handleBack" style="-fx-background-color: #A0522D; -fx-text-fill: White;" text="Back" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" />
 
 </AnchorPane>

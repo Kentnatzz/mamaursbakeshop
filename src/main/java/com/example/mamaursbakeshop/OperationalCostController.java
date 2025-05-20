@@ -60,6 +60,15 @@ public class OperationalCostController {
         totalColumn.setCellValueFactory(cell -> cell.getValue().totalProperty());
 
         tableView.setItems(data);
+
+
+        data.addAll(
+                new OperationalCost(5000.0, 2000.0, 1500.0),
+                new OperationalCost(4800.0, 2100.0, 1400.0),
+                new OperationalCost(5300.0, 1900.0, 1600.0),
+                new OperationalCost(5100.0, 2000.0, 1550.0),
+                new OperationalCost(4950.0, 2050.0, 1450.0)
+        );
     }
 
     @FXML

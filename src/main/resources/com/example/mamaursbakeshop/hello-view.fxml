@@ -22,7 +22,7 @@
             <TextField fx:id="usernameField" prefHeight="25.0" prefWidth="260.0" />
             <Label alignment="CENTER" prefHeight="25.0" prefWidth="279.0" text="PASSWORD" />
             <PasswordField fx:id="passwordField" prefHeight="25.0" prefWidth="260.0" />
-            <Button mnemonicParsing="false" onAction="#onLoginButtonClick" prefHeight="30.0" prefWidth="351.0" style="-fx-background-color: #4CAF50; -fx-text-fill: white;" text="Login" />
+            <Button mnemonicParsing="false" onAction="#onLoginButtonClick" prefHeight="30.0" prefWidth="323.0" style="-fx-background-color: #4CAF50; -fx-text-fill: white;" text="Login" />
          </children>
       </VBox>
       <ImageView fitHeight="290.0" fitWidth="556.0" layoutX="396.0" layoutY="273.0" pickOnBounds="true" preserveRatio="true">

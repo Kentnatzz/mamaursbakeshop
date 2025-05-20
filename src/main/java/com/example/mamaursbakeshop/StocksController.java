@@ -19,44 +19,19 @@ import java.time.format.DateTimeParseException;
 
 public class StocksController {
 
-    @FXML
-    private TableView<Sale> breadSalesTable;
+    @FXML private TableView<Sale> breadSalesTable;
+    @FXML private TableColumn<Sale, String> breadTypeColumn;
+    @FXML private TableColumn<Sale, Double> priceColumn;
+    @FXML private TableColumn<Sale, Integer> quantitySoldColumn;
+    @FXML private TableColumn<Sale, Double> totalColumn;
+    @FXML private TableColumn<Sale, String> salesDateColumn;
 
-    @FXML
-    private TableColumn<Sale, String> breadTypeColumn;
-
-    @FXML
-    private TableColumn<Sale, Double> priceColumn;
-
-    @FXML
-    private TableColumn<Sale, Integer> quantitySoldColumn;
-
-    @FXML
-    private TableColumn<Sale, Double> totalColumn;
-
-    @FXML
-    private TableColumn<Sale, String> salesDateColumn;
-
-    @FXML
-    private TextField breadTypeInput;
-
-    @FXML
-    private TextField priceInput;
-
-    @FXML
-    private TextField quantitySoldInput;
-
-    @FXML
-    private TextField salesDateInput;
-
-    @FXML
-    private Label totalQuantityLabel;
-
-    @FXML
-    private Label biMonthlyLabel;
+    @FXML private TextField breadTypeInput;
+    @FXML private TextField priceInput;
+    @FXML private TextField quantitySoldInput;
+    @FXML private TextField salesDateInput;
 
     private ObservableList<Sale> salesData;
-
     private final DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
     @FXML
@@ -70,7 +45,6 @@ public class StocksController {
         salesData = FXCollections.observableArrayList();
         breadSalesTable.setItems(salesData);
 
-
         salesData.addAll(
                 new Sale("Pandesal", 2.50, 50, "2025-05-10"),
                 new Sale("Ensaymada", 10.00, 20, "2025-05-12"),
@@ -78,8 +52,7 @@ public class StocksController {
                 new Sale("Cheese Roll", 8.00, 15, "2025-05-18")
         );
 
-        updateTotalQuantity();
-        updateBiMonthlyPeriod();
+
     }
 
     @FXML
@@ -125,8 +98,8 @@ public class StocksController {
         salesData.add(newSale);
 
         clearInputs();
-        updateTotalQuantity();
-        updateBiMonthlyPeriod();
+
+
     }
 
     @FXML
@@ -134,8 +107,8 @@ public class StocksController {
         Sale selected = breadSalesTable.getSelectionModel().getSelectedItem();
         if (selected != null) {
             salesData.remove(selected);
-            updateTotalQuantity();
-            updateBiMonthlyPeriod();
+
+
         } else {
             showAlert(Alert.AlertType.WARNING, "No Selection", "Please select a sale to delete.");
         }
@@ -148,36 +121,6 @@ public class StocksController {
         Scene scene = new Scene(optionsRoot);
         stage.setScene(scene);
         stage.show();
-    }
-
-    private void updateTotalQuantity() {
-        int totalQty = salesData.stream().mapToInt(Sale::getQuantitySold).sum();
-        totalQuantityLabel.setText(String.valueOf(totalQty));
-    }
-
-    private void updateBiMonthlyPeriod() {
-        if (salesData.isEmpty()) {
-            biMonthlyLabel.setText("-");
-            return;
-        }
-
-        LocalDate minDate = salesData.stream()
-                .map(s -> LocalDate.parse(s.getSalesDate(), dateFormatter))
-                .min(LocalDate::compareTo)
-                .orElse(null);
-
-        LocalDate maxDate = salesData.stream()
-                .map(s -> LocalDate.parse(s.getSalesDate(), dateFormatter))
-                .max(LocalDate::compareTo)
-                .orElse(null);
-
-        if (minDate == null || maxDate == null) {
-            biMonthlyLabel.setText("-");
-            return;
-        }
-
-        String period = minDate.format(dateFormatter) + " to " + maxDate.format(dateFormatter);
-        biMonthlyLabel.setText(period);
     }
 
     private void clearInputs() {
@@ -195,6 +138,7 @@ public class StocksController {
         alert.showAndWait();
     }
 
+    // 📦 Model class
     public static class Sale {
         private final String breadType;
         private final double price;

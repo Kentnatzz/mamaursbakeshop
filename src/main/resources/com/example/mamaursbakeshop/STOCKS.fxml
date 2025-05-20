@@ -7,7 +7,7 @@
 <AnchorPane prefHeight="550.0" prefWidth="650.0" style="-fx-background-color: beige;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.mamaursbakeshop.StocksController">
 
     <children>
-        <VBox alignment="TOP_CENTER" layoutX="20.0" layoutY="20.0" prefHeight="530.0" prefWidth="609.0" spacing="20.0">
+        <VBox alignment="TOP_CENTER" layoutX="20.0" layoutY="20.0" prefWidth="609.0" spacing="20.0">
 
             <HBox alignment="CENTER">
                 <Label text="SALES AND INVENTORY">
@@ -44,6 +44,7 @@
                 <Button onAction="#handleDeleteSale" style="-fx-background-color: #A0522D; -fx-text-fill: white;" text="Delete Sale" />
                 <Button onAction="#handleBack" style="-fx-background-color: #A0522D; -fx-text-fill: white;" text="Back" />
             </HBox>
+
 
         </VBox>
     </children>

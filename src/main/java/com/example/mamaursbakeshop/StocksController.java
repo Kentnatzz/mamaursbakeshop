@@ -61,14 +61,13 @@ public class StocksController {
 
     @FXML
     public void initialize() {
-        // Initialize table columns
+
         breadTypeColumn.setCellValueFactory(new PropertyValueFactory<>("breadType"));
         priceColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
         quantitySoldColumn.setCellValueFactory(new PropertyValueFactory<>("quantitySold"));
         totalColumn.setCellValueFactory(new PropertyValueFactory<>("total"));
         salesDateColumn.setCellValueFactory(new PropertyValueFactory<>("salesDate"));
 
-        // Initialize sales data list
         salesData = FXCollections.observableArrayList();
         breadSalesTable.setItems(salesData);
 
@@ -189,7 +188,6 @@ public class StocksController {
         alert.showAndWait();
     }
 
-    // Inner class to represent a Sale record
     public static class Sale {
         private final String breadType;
         private final double price;

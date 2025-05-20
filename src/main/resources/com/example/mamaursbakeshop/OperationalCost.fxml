@@ -17,20 +17,16 @@
                 <RowConstraints />
                 <RowConstraints />
                 <RowConstraints />
-                <RowConstraints />
             </rowConstraints>
 
-            <Label text="Capital:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-            <TextField fx:id="capitalField" promptText="Enter capital" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+            <Label text="Profit:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <TextField fx:id="profitField" promptText="Enter profit" GridPane.columnIndex="1" GridPane.rowIndex="0" />
 
-            <Label text="Profit:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
-            <TextField fx:id="profitField" promptText="Enter profit" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label text="Labor Cost:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <TextField fx:id="laborCostField" promptText="Enter labor cost" GridPane.columnIndex="1" GridPane.rowIndex="1" />
 
-            <Label text="Labor Cost:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
-            <TextField fx:id="laborCostField" promptText="Enter labor cost" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-
-            <Label text="Utility Cost:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
-            <TextField fx:id="utilityCostField" promptText="Enter utility cost" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Label text="Utility Cost:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+            <TextField fx:id="utilityCostField" promptText="Enter utility cost" GridPane.columnIndex="1" GridPane.rowIndex="2" />
         </GridPane>
 
         <HBox spacing="10">
@@ -41,7 +37,6 @@
 
         <TableView fx:id="tableView" prefHeight="200">
             <columns>
-                <TableColumn fx:id="capitalColumn" prefWidth="140" text="Capital" />
                 <TableColumn fx:id="utilityCostColumn" prefWidth="140" text="Utility Cost" />
                 <TableColumn fx:id="laborCostColumn" prefWidth="140" text="Labor Cost" />
                 <TableColumn fx:id="profitColumn" prefWidth="140" text="Profit" />

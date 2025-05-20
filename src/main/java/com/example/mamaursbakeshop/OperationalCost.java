@@ -17,7 +17,6 @@ public class OperationalCost {
         this.utilityCost = new SimpleStringProperty(utilityCost);
     }
 
-    public StringProperty capitalProperty() { return capital; }
     public StringProperty profitProperty() { return profit; }
     public StringProperty laborCostProperty() { return laborCost; }
     public StringProperty utilityCostProperty() { return utilityCost; }

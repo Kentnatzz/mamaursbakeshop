@@ -12,13 +12,11 @@ import javafx.stage.Stage;
 
 public class OperationalCostController {
 
-    @FXML private TextField capitalField;
     @FXML private TextField profitField;
     @FXML private TextField laborCostField;
     @FXML private TextField utilityCostField;
 
     @FXML private TableView<OperationalCost> tableView;
-    @FXML private TableColumn<OperationalCost, Number> capitalColumn;
     @FXML private TableColumn<OperationalCost, Number> utilityCostColumn;
     @FXML private TableColumn<OperationalCost, Number> laborCostColumn;
     @FXML private TableColumn<OperationalCost, Number> profitColumn;
@@ -27,22 +25,17 @@ public class OperationalCostController {
     private ObservableList<OperationalCost> data;
 
     public static class OperationalCost {
-        private final DoubleProperty capital;
         private final DoubleProperty profit;
         private final DoubleProperty laborCost;
         private final DoubleProperty utilityCost;
         private final DoubleProperty total;
 
-        public OperationalCost(double capital, double profit, double laborCost, double utilityCost) {
-            this.capital = new SimpleDoubleProperty(capital);
+        public OperationalCost(double profit, double laborCost, double utilityCost) {
             this.profit = new SimpleDoubleProperty(profit);
             this.laborCost = new SimpleDoubleProperty(laborCost);
             this.utilityCost = new SimpleDoubleProperty(utilityCost);
-            this.total = new SimpleDoubleProperty(capital + profit + laborCost + utilityCost);
+            this.total = new SimpleDoubleProperty(profit + laborCost + utilityCost);
         }
-
-        public double getCapital() { return capital.get(); }
-        public DoubleProperty capitalProperty() { return capital; }
 
         public double getProfit() { return profit.get(); }
         public DoubleProperty profitProperty() { return profit; }
@@ -61,7 +54,6 @@ public class OperationalCostController {
     public void initialize() {
         data = FXCollections.observableArrayList();
 
-        capitalColumn.setCellValueFactory(cell -> cell.getValue().capitalProperty());
         profitColumn.setCellValueFactory(cell -> cell.getValue().profitProperty());
         laborCostColumn.setCellValueFactory(cell -> cell.getValue().laborCostProperty());
         utilityCostColumn.setCellValueFactory(cell -> cell.getValue().utilityCostProperty());
@@ -73,15 +65,13 @@ public class OperationalCostController {
     @FXML
     private void handleAdd() {
         try {
-            double capital = Double.parseDouble(capitalField.getText());
             double profit = Double.parseDouble(profitField.getText());
             double laborCost = Double.parseDouble(laborCostField.getText());
             double utilityCost = Double.parseDouble(utilityCostField.getText());
 
-            OperationalCost newCost = new OperationalCost(capital, profit, laborCost, utilityCost);
+            OperationalCost newCost = new OperationalCost(profit, laborCost, utilityCost);
             data.add(newCost);
 
-            capitalField.clear();
             profitField.clear();
             laborCostField.clear();
             utilityCostField.clear();
@@ -118,7 +108,6 @@ public class OperationalCostController {
             stage.setScene(new Scene(root));
             stage.show();
 
-            // Close the current window
             Stage currentStage = (Stage) ((Button) event.getSource()).getScene().getWindow();
             currentStage.close();
 

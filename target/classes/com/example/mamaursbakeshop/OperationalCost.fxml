@@ -30,12 +30,12 @@
         </GridPane>
 
         <HBox spacing="10">
-            <Button onAction="#handleAdd" text="Add" />
-            <Button onAction="#handleDelete" text="Delete" />
-            <Button onAction="#handleClear" text="Clear All" />
+            <Button onAction="#handleAdd" style="-fx-background-color: #A0522D; -fx-text-fill: White;" text="Add" />
+            <Button onAction="#handleDelete" style="-fx-background-color: #A0522D; -fx-text-fill: White;" text="Delete" />
+            <Button onAction="#handleClear" style="-fx-background-color: #A0522D; -fx-text-fill: White;" text="Clear All" />
         </HBox>
 
-        <TableView fx:id="tableView" prefHeight="200">
+        <TableView fx:id="tableView" prefHeight="406.0" prefWidth="680.0">
             <columns>
                 <TableColumn fx:id="utilityCostColumn" prefWidth="140" text="Utility Cost" />
                 <TableColumn fx:id="laborCostColumn" prefWidth="140" text="Labor Cost" />
@@ -46,6 +46,6 @@
 
     </VBox>
 
-    <Button fx:id="backButton" onAction="#handleBack" text="Back" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" />
+    <Button fx:id="backButton" onAction="#handleBack" style="-fx-background-color: #A0522D; -fx-text-fill: White;" text="Back" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" />
 
 </AnchorPane>

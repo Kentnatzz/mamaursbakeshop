@@ -79,7 +79,6 @@ public class SalesController {
 
         if (file != null) {
             try (FileWriter writer = new FileWriter(file)) {
-                // Write the sales data to the CSV file
                 writer.write("Date,Total Sales ($)\n");
                 for (XYChart.Data<String, Number> data : salesSeries.getData()) {
                     writer.write(data.getXValue() + "," + data.getYValue() + "\n");

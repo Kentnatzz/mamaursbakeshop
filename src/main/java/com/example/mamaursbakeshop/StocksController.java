@@ -70,7 +70,7 @@ public class StocksController {
         salesData = FXCollections.observableArrayList();
         breadSalesTable.setItems(salesData);
 
-        // ✅ Optional: Add sample data for testing
+
         salesData.addAll(
                 new Sale("Pandesal", 2.50, 50, "2025-05-10"),
                 new Sale("Ensaymada", 10.00, 20, "2025-05-12"),

@@ -31,13 +31,16 @@
          <VBox alignment="CENTER" prefHeight="311.0" prefWidth="523.0" spacing="10.0">
             <Button onAction="#handleStocks" prefHeight="25.0" prefWidth="253.0" style="-fx-background-color: #A0522D; -fx-text-fill: white;" text="SALES AND INVENTORY">
                <font>
-                  <Font name="System Bold Italic" size="12.0" />
+                  <Font name="System Bold" size="12.0" />
                </font></Button>
             <Button onAction="#handleSales" prefWidth="250.0" style="-fx-background-color: #A0522D; -fx-text-fill: white;" text="SALES GRAPHIC OVERVIEW">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font></Button>
-            <Button onAction="#handleSuppliers" prefWidth="250.0" style="-fx-background-color: #A0522D; -fx-text-fill: white;" text="SUPPLIERS INFORMATION" />
+            <Button onAction="#handleSuppliers" prefWidth="250.0" style="-fx-background-color: #A0522D; -fx-text-fill: white;" text="SUPPLIERS INFORMATION">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Button>
             <Button onAction="#handleEmployees" prefWidth="250.0" style="-fx-background-color: #A0522D; -fx-text-fill: white;" text="EMPLOYEE DATA">
                <font>
                   <Font name="System Bold" size="12.0" />

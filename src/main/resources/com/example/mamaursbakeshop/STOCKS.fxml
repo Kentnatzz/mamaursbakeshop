@@ -45,14 +45,6 @@
                 <Button onAction="#handleBack" style="-fx-background-color: #A0522D; -fx-text-fill: white;" text="Back" />
             </HBox>
 
-
-            <HBox alignment="CENTER_RIGHT" spacing="15.0">
-                <Label text="Total Quantity Sold:" />
-                <Label fx:id="totalQuantityLabel" style="-fx-font-weight: bold;" text="0" />
-                <Label text="Bi-Monthly Period:" />
-                <Label fx:id="biMonthlyLabel" style="-fx-font-style: italic;" text="-" />
-            </HBox>
-
         </VBox>
     </children>
 </AnchorPane>

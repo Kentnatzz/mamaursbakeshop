@@ -34,6 +34,13 @@ public class StocksController {
     private ObservableList<Sale> salesData;
     private final DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
+    private static ObservableList<Sale> persistentSalesData = FXCollections.observableArrayList(
+        new Sale("Pandesal", 2.50, 50, "2025-05-10"),
+        new Sale("Ensaymada", 10.00, 20, "2025-05-12"),
+        new Sale("Spanish Bread", 5.00, 30, "2025-05-15"),
+        new Sale("Cheese Roll", 8.00, 15, "2025-05-18")
+    );
+
     @FXML
     public void initialize() {
         breadTypeColumn.setCellValueFactory(new PropertyValueFactory<>("breadType"));
@@ -42,17 +49,8 @@ public class StocksController {
         totalColumn.setCellValueFactory(new PropertyValueFactory<>("total"));
         salesDateColumn.setCellValueFactory(new PropertyValueFactory<>("salesDate"));
 
-        salesData = FXCollections.observableArrayList();
+        salesData = persistentSalesData;
         breadSalesTable.setItems(salesData);
-
-        salesData.addAll(
-                new Sale("Pandesal", 2.50, 50, "2025-05-10"),
-                new Sale("Ensaymada", 10.00, 20, "2025-05-12"),
-                new Sale("Spanish Bread", 5.00, 30, "2025-05-15"),
-                new Sale("Cheese Roll", 8.00, 15, "2025-05-18")
-        );
-
-
     }
 
     @FXML

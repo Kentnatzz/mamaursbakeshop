@@ -14,6 +14,9 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 public class SuppliersController implements Initializable {
 
     @FXML
@@ -60,20 +63,20 @@ public class SuppliersController implements Initializable {
         }
     }
 
+    private static ObservableList<String> persistentSuppliers = FXCollections.observableArrayList(
+        "Golden Grains Co. - Manila, Philippines",
+        "FreshBake Supplies - Cebu City",
+        "Dough Masters Inc. - Davao City",
+        "Yeast & Flour Distributors - Quezon City",
+        "BakeSource PH - Bacolod",
+        "Supreme Baking Goods - Iloilo",
+        "Tasty Trade Corp. - Baguio City",
+        "Crusty Ingredients Ltd. - General Santos",
+        "Flourish Supply Chain - Tagaytay",
+        "Panadero Partners - Laguna"
+    );
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
-        supplierListView.getItems().addAll(
-                "Golden Grains Co. - Manila, Philippines",
-                "FreshBake Supplies - Cebu City",
-                "Dough Masters Inc. - Davao City",
-                "Yeast & Flour Distributors - Quezon City",
-                "BakeSource PH - Bacolod",
-                "Supreme Baking Goods - Iloilo",
-                "Tasty Trade Corp. - Baguio City",
-                "Crusty Ingredients Ltd. - General Santos",
-                "Flourish Supply Chain - Tagaytay",
-                "Panadero Partners - Laguna"
-        );
+        supplierListView.setItems(persistentSuppliers);
     }
 }

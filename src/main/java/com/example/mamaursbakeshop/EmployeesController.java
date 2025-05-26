@@ -51,6 +51,17 @@ public class EmployeesController {
     private Button updateSalaryButton, backButton;
 
     @FXML
+    private static ObservableList<Employee> persistentEmployees = FXCollections.observableArrayList(
+        new Employee("BK001", "Alex Rivera", "Baker", "Morning", "alex.rivera@bakeryhouse.com", "10$/hr"),
+        new Employee("BK002", "Jamie Cruz", "Cashier", "Afternoon", "jamie.cruz@bakeryhouse.com", "12$/hr"),
+        new Employee("BK003", "Leo Santos", "Pastry Chef", "Full-Time", "leo.santos@bakeryhouse.com", "16$/hr"),
+        new Employee("BK004", "Carla Dizon", "Supervisor", "Morning", "carla.dizon@bakeryhouse.com", "18$/hr"),
+        new Employee("BK005", "Miguel Reyes", "Bread Packager", "Afternoon", "miguel.reyes@bakeryhouse.com", "10$/hr"),
+        new Employee("BK006", "Nina Flores", "Customer Service Rep", "Full-Time", "nina.flores@bakeryhouse.com", "15$/hr"),
+        new Employee("BK007", "Bryan Tan", "Oven Technician", "Morning", "bryan.tan@bakeryhouse.com", "10$/hr"),
+        new Employee("BK008", "Rose Lim", "Cleaning Staff", "Night Shift", "rose.lim@bakeryhouse.com", "16$/hr")
+    );
+    @FXML
     public void initialize() {
         employeeTable.setEditable(true);
 
@@ -61,17 +72,7 @@ public class EmployeesController {
         setupColumn(emailColumn, Employee::emailProperty);
         setupColumn(rateColumn, Employee::rateProperty);
 
-        ObservableList<Employee> employees = FXCollections.observableArrayList(
-                new Employee("BK001", "Alex Rivera", "Baker", "Morning", "alex.rivera@bakeryhouse.com", "10$/hr"),
-                new Employee("BK002", "Jamie Cruz", "Cashier", "Afternoon", "jamie.cruz@bakeryhouse.com", "12$/hr"),
-                new Employee("BK003", "Leo Santos", "Pastry Chef", "Full-Time", "leo.santos@bakeryhouse.com", "16$/hr"),
-                new Employee("BK004", "Carla Dizon", "Supervisor", "Morning", "carla.dizon@bakeryhouse.com", "18$/hr"),
-                new Employee("BK005", "Miguel Reyes", "Bread Packager", "Afternoon", "miguel.reyes@bakeryhouse.com", "10$/hr"),
-                new Employee("BK006", "Nina Flores", "Customer Service Rep", "Full-Time", "nina.flores@bakeryhouse.com", "15$/hr"),
-                new Employee("BK007", "Bryan Tan", "Oven Technician", "Morning", "bryan.tan@bakeryhouse.com", "10$/hr"),
-                new Employee("BK008", "Rose Lim", "Cleaning Staff", "Night Shift", "rose.lim@bakeryhouse.com", "16$/hr")
-        );
-        employeeTable.setItems(employees);
+        employeeTable.setItems(persistentEmployees);
 
         updateSalaryButton.setOnAction(e -> {
             System.out.println("Update Salary clicked");

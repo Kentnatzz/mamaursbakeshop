@@ -35,12 +35,13 @@ public class SalesController {
 
     private XYChart.Series<String, Number> salesSeries;
 
-    public void initialize() {
+    // Use a static series for persistent sales data during app runtime
+    private static XYChart.Series<String, Number> persistentSalesSeries = new XYChart.Series<>();
 
-        salesSeries = new XYChart.Series<>();
+    public void initialize() {
+        salesSeries = persistentSalesSeries;
         salesChart.getData().add(salesSeries);
     }
-
 
     @FXML
     private void handleAddSales(ActionEvent event) {
@@ -54,7 +55,7 @@ public class SalesController {
 
         try {
             double salesAmount = Double.parseDouble(salesText);
-            salesSeries.getData().add(new XYChart.Data<>(date, salesAmount));
+            persistentSalesSeries.getData().add(new XYChart.Data<>(date, salesAmount));
             dateInput.clear();
             salesInput.clear();
         } catch (NumberFormatException e) {
@@ -65,7 +66,7 @@ public class SalesController {
 
     @FXML
     private void handleRefresh(ActionEvent event) {
-        salesSeries.getData().clear();
+        persistentSalesSeries.getData().clear();
         showAlert("Success", "Sales chart refreshed.");
     }
 
@@ -81,7 +82,7 @@ public class SalesController {
             try (FileWriter writer = new FileWriter(file)) {
 
                 writer.write("Date,Total Sales ($)\n");
-                for (XYChart.Data<String, Number> data : salesSeries.getData()) {
+                for (XYChart.Data<String, Number> data : persistentSalesSeries.getData()) {
                     writer.write(data.getXValue() + "," + data.getYValue() + "\n");
                 }
                 showAlert("Success", "Sales data exported successfully.");

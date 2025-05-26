@@ -23,15 +23,14 @@ public class BreadStockController {
     @FXML private TableColumn<BreadItem, Integer> quantityColumn;
     @FXML private TableColumn<BreadItem, Double> priceColumn;
 
-    private final ObservableList<BreadItem> breadList = FXCollections.observableArrayList();
-
+    private static ObservableList<BreadItem> persistentBreadList = FXCollections.observableArrayList();
     @FXML
     public void initialize() {
         breadNameColumn.setCellValueFactory(cellData -> cellData.getValue().breadNameProperty());
         quantityColumn.setCellValueFactory(cellData -> cellData.getValue().quantityProperty().asObject());
         priceColumn.setCellValueFactory(cellData -> cellData.getValue().priceProperty().asObject());
 
-        tableView.setItems(breadList);
+        tableView.setItems(persistentBreadList);
 
         tableView.getSelectionModel().selectedItemProperty().addListener((obs, oldVal, newVal) -> {
             if (newVal != null) {
@@ -52,7 +51,7 @@ public class BreadStockController {
             int quantity = Integer.parseInt(quantityText);
             double price = Double.parseDouble(priceText);
 
-            breadList.add(new BreadItem(breadName, quantity, price));
+            persistentBreadList.add(new BreadItem(breadName, quantity, price));
             clearFields();
         }
     }
@@ -61,14 +60,14 @@ public class BreadStockController {
     private void handleDelete() {
         BreadItem selected = tableView.getSelectionModel().getSelectedItem();
         if (selected != null) {
-            breadList.remove(selected);
+            persistentBreadList.remove(selected);
             clearFields();
         }
     }
 
     @FXML
     private void handleClear() {
-        breadList.clear();
+        persistentBreadList.clear();
         clearFields();
     }
 

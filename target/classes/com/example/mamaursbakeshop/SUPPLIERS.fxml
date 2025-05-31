@@ -3,7 +3,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: beige;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.mamaursbakeshop.SuppliersController">
+<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: linear-gradient(to bottom right, #fff8e1, #ffe0b2);" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.mamaursbakeshop.SuppliersController">
 
 
     <VBox alignment="CENTER" layoutX="98.0" layoutY="30.0" prefHeight="500.0" prefWidth="620.0" spacing="20">
@@ -21,8 +21,8 @@
 
 
         <Button onAction="#handleAddSupplier" style="-fx-background-color: #8B4513; -fx-text-fill: white;" text="Add Supplier" />
-   
-   
-       <Button onAction="#handleBack" style="-fx-background-color: #A0522D; -fx-text-fill: white;" text="Back" />
+
+
+        <Button onAction="#handleBack" style="-fx-background-color: #A0522D; -fx-text-fill: white;" text="Back" />
     </VBox>
 </AnchorPane>

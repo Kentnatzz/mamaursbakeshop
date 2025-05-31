@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="740.0" style="-fx-background-color: beige;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.mamaursbakeshop.LoginController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="740.0" style="-fx-background-color: linear-gradient(to bottom right, #fff8e1, #ffe0b2);" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.mamaursbakeshop.LoginController">
    <children>
       <HBox layoutX="103.0" layoutY="58.0" prefHeight="158.0" prefWidth="565.0">
          <children>
@@ -25,9 +25,9 @@
             <Button mnemonicParsing="false" onAction="#onLoginButtonClick" prefHeight="30.0" prefWidth="323.0" style="-fx-background-color: #4CAF50; -fx-text-fill: white;" text="Login" />
          </children>
       </VBox>
-      <ImageView fitHeight="290.0" fitWidth="556.0" layoutX="396.0" layoutY="273.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="290.0" fitWidth="556.0" layoutX="406.0" layoutY="329.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@123123-removebg-preview.png" />
+            <Image url="@bakery-logo-cake-bread-png-favpng-jVJb8QQdGw5U65FNHAeSw6wD7-removebg-preview.png" />
          </image>
       </ImageView>
    </children>

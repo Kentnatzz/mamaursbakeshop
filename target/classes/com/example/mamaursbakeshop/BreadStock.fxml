@@ -3,7 +3,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="550.0" prefWidth="660.0" style="-fx-background-color: beige;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.mamaursbakeshop.BreadStockController">
+<AnchorPane prefHeight="550.0" prefWidth="660.0" style="-fx-background-color: linear-gradient(to bottom right, #fff8e1, #ffe0b2);" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.mamaursbakeshop.BreadStockController">
 
     <VBox prefHeight="380.0" prefWidth="580.0" spacing="10.0" style="-fx-background-color: beige;" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
 
@@ -43,7 +43,6 @@
             </columns>
         </TableView>
     </VBox>
-
 
     <Button fx:id="backButton" onAction="#handleBack" style="-fx-background-color: #A0522D; -fx-text-fill: White;" text="Back" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" />
 

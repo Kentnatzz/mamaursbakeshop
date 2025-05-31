@@ -10,37 +10,34 @@ import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
+import javafx.scene.Parent;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.InputStream;
-import javafx.scene.Parent;
 
 public class SalesController {
 
+    @FXML private AreaChart<String, Number> salesChart;
+    @FXML private CategoryAxis xAxis;
+    @FXML private NumberAxis yAxis;
+    @FXML private TextField dateInput;
+    @FXML private TextField salesInput;
+
+
+    private static XYChart.Series<String, Number> salesSeries = new XYChart.Series<>();
 
     @FXML
-    private AreaChart<String, Number> salesChart;
-    @FXML
-    private CategoryAxis xAxis;
-    @FXML
-    private NumberAxis yAxis;
-    @FXML
-    private TextField dateInput;
-    @FXML
-    private TextField salesInput;
-
-    private XYChart.Series<String, Number> salesSeries;
-
-    // Use a static series for persistent sales data during app runtime
-    private static XYChart.Series<String, Number> persistentSalesSeries = new XYChart.Series<>();
-
     public void initialize() {
-        salesSeries = persistentSalesSeries;
+        salesSeries.setName("Daily Sales");
         salesChart.getData().add(salesSeries);
+    }
+
+
+    public static void addSaleToChart(String date, double amount) {
+        salesSeries.getData().add(new XYChart.Data<>(date, amount));
     }
 
     @FXML
@@ -55,7 +52,7 @@ public class SalesController {
 
         try {
             double salesAmount = Double.parseDouble(salesText);
-            persistentSalesSeries.getData().add(new XYChart.Data<>(date, salesAmount));
+            salesSeries.getData().add(new XYChart.Data<>(date, salesAmount));
             dateInput.clear();
             salesInput.clear();
         } catch (NumberFormatException e) {
@@ -63,26 +60,22 @@ public class SalesController {
         }
     }
 
-
     @FXML
     private void handleRefresh(ActionEvent event) {
-        persistentSalesSeries.getData().clear();
+        salesSeries.getData().clear();
         showAlert("Success", "Sales chart refreshed.");
     }
 
-
     @FXML
     private void handleExport(ActionEvent event) {
-
         FileChooser fileChooser = new FileChooser();
         fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("CSV Files", "*.csv"));
         File file = fileChooser.showSaveDialog(null);
 
         if (file != null) {
             try (FileWriter writer = new FileWriter(file)) {
-
                 writer.write("Date,Total Sales ($)\n");
-                for (XYChart.Data<String, Number> data : persistentSalesSeries.getData()) {
+                for (XYChart.Data<String, Number> data : salesSeries.getData()) {
                     writer.write(data.getXValue() + "," + data.getYValue() + "\n");
                 }
                 showAlert("Success", "Sales data exported successfully.");
@@ -92,15 +85,11 @@ public class SalesController {
         }
     }
 
-
     @FXML
     private void handleBack(ActionEvent event) {
         try {
-
             FXMLLoader loader = new FXMLLoader(getClass().getResource("Options.fxml"));
             Parent root = loader.load();
-
-
             Stage stage = (Stage) salesChart.getScene().getWindow();
             Scene scene = new Scene(root);
             stage.setScene(scene);
@@ -109,7 +98,6 @@ public class SalesController {
             showAlert("Error", "Failed to load the options page.");
         }
     }
-
 
     private void showAlert(String title, String message) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);

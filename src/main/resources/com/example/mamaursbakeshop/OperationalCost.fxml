@@ -3,7 +3,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="600.0" prefWidth="700.0" style="-fx-background-color: beige;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.mamaursbakeshop.OperationalCostController">
+<AnchorPane prefHeight="600.0" prefWidth="700.0" style="-fx-background-color: linear-gradient(to bottom right, #fff8e1, #ffe0b2);" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.mamaursbakeshop.OperationalCostController">
 
     <VBox spacing="10" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
 

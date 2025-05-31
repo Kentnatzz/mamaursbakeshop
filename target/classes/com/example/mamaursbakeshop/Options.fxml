@@ -5,11 +5,11 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="600.0" prefWidth="740.0" style="-fx-background-color: beige;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.mamaursbakeshop.OptionsController">
+<AnchorPane prefHeight="600.0" prefWidth="740.0" style="-fx-background-color: linear-gradient(to bottom right, #fff8e1, #ffe0b2);" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.mamaursbakeshop.OptionsController">
    <children>
       <ImageView fitHeight="219.0" fitWidth="307.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@123123-removebg-preview.png" />
+            <Image url="@bakery-logo-cake-bread-png-favpng-jVJb8QQdGw5U65FNHAeSw6wD7-removebg-preview.png" />
          </image>
       </ImageView>
       <VBox alignment="CENTER" layoutX="135.0" layoutY="30.0" prefHeight="527.0" prefWidth="523.0" spacing="20.0">
